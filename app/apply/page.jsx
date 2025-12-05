@@ -6,8 +6,8 @@ export default function ApplyPage() {
           Apply to become a Connector
         </h1>
         <p className="mt-2 text-sm text-gray-300">
-          Tell us a little about yourself and how you plan to find buyers. We’ll
-          review your application and get back to you.
+          Tell us a little about yourself and how you plan to find buyers. We will review
+your application and get back to you.
         </p>
 
         <form className="mt-6 space-y-4">
