@@ -1,33 +1,64 @@
-import Link from 'next/link';
-import { motion } from 'framer-motion';
-
+// app/page.jsx
 export default function Home() {
-  return (
-    <div className='text-center'>
-      <motion.h1 initial={{y:-20, opacity:0}} animate={{y:0, opacity:1}} transition={{duration:0.6}} className='text-5xl font-extrabold'>
-        Auto <span className='text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-yellow-300'>Connectors</span>
-      </motion.h1>
-      <p className='mt-4 text-gray-300'>Sell cars from home. Earn commissions that grow with you.</p>
+  return (
+    <main style={{
+      minHeight: "100vh",
+      background: "radial-gradient(circle at top, #0f172a 0, #020617 55%, #000 100%)",
+      color: "#e5e7eb",
+      fontFamily: "system-ui, -apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif",
+      padding: "40px 20px"
+    }}>
+      <div style={{ maxWidth: "900px", margin: "0 auto" }}>
+        <h1 style={{ fontSize: "32px", marginBottom: "12px" }}>
+          Auto <span style={{ color: "#007bff" }}>Connectors</span>
+        </h1>
+        <p style={{ maxWidth: "520px", color: "#9ca3af", marginBottom: "24px" }}>
+          We post the cars. You bring the buyers. When your client buys, you earn a commission.
+          Hit goals and your commission per car increases over time.
+        </p>
 
-      <div className='mt-8 flex justify-center gap-4'>
-        <Link href='/signup'><button className='btn'>Get Started</button></Link>
-        <Link href='/login'><button className='btn bg-white/10'>Sign in</button></Link>
-      </div>
+        <a
+          href="#how"
+          style={{
+            display: "inline-block",
+            padding: "10px 18px",
+            borderRadius: "999px",
+            background: "linear-gradient(90deg,#007bff,#38bdf8)",
+            color: "#020617",
+            fontWeight: 600,
+            textDecoration: "none",
+            marginBottom: "36px"
+          }}
+        >
+          How it works
+        </a>
 
-      <section className='mt-12 grid grid-cols-1 md:grid-cols-3 gap-6'>
-        <div className='card'>
-          <h3 className='font-bold text-lg'>Post Inventory</h3>
-          <p className='mt-2 text-sm text-gray-300'>Admin posts cars with photos and details.</p>
-        </div>
-        <div className='card'>
-          <h3 className='font-bold text-lg'>Share Referral Links</h3>
-          <p className='mt-2 text-sm text-gray-300'>Connectors share links and submit leads.</p>
-        </div>
-        <div className='card'>
-          <h3 className='font-bold text-lg'>Earn Commissions</h3>
-          <p className='mt-2 text-sm text-gray-300'>Commissions grow as you hit sales goals.</p>
-        </div>
-      </section>
-    </div>
-  );
+        <section id="how" style={{ marginTop: "10px" }}>
+          <h2 style={{ fontSize: "22px", marginBottom: "12px" }}>How it works</h2>
+          <ol style={{ paddingLeft: "18px", lineHeight: 1.6, color: "#d1d5db" }}>
+            <li>Apply to become a Connector and get approved.</li>
+            <li>We send you cars to post from your phone (social, Marketplace, etc.).</li>
+            <li>You send serious buyers our way. If they purchase, you get paid.</li>
+          </ol>
+        </section>
+
+        <section style={{ marginTop: "32px" }}>
+          <h2 style={{ fontSize: "22px", marginBottom: "12px" }}>Example car</h2>
+          <div style={{
+            borderRadius: "14px",
+            padding: "16px",
+            background: "rgba(15,23,42,0.9)",
+            border: "1px solid rgba(148,163,184,0.25)"
+          }}>
+            <h3 style={{ margin: 0 }}>2020 Honda Civic</h3>
+            <p style={{ margin: "4px 0", color: "#9ca3af" }}>100,897 miles · Clean title</p>
+            <p style={{ margin: "4px 0", color: "#93c5fd", fontWeight: 600 }}>$19,995</p>
+            <p style={{ margin: "8px 0 0", fontSize: "14px", color: "#9ca3af" }}>
+              You could earn <strong>$400–$600</strong> on a deal like this depending on your tier.
+            </p>
+          </div>
+        </section>
+      </div>
+    </main>
+  );
 }
